@@ -2,7 +2,6 @@ import Head from 'next/head'
 import clientPromise from '../lib/mongodb'
 import { InferGetServerSidePropsType } from 'next'
 
-
 export async function getServerSideProps(context) {
   try {
     await clientPromise
@@ -37,9 +36,7 @@ export default function Home({
       </Head>
 
       <main>
-        <h1>
-          Secret Santa Edu
-        </h1>
+        <h1>Secret Santa Edu</h1>
 
         {isConnected ? (
           <h2 className="subtitle">You are connected to MongoDB</h2>
