@@ -4,11 +4,11 @@ import { Avatar } from '../components/Avatar'
 
 export default function Santas({ santas }) {
   return (
-    <div>
+    <>
       <h1>Listado de Santas</h1>
       <ul
         role="list"
-        className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+        className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5"
       >
         {santas.map((santa) => (
           <li
@@ -25,7 +25,7 @@ export default function Santas({ santas }) {
           </li>
         ))}
       </ul>
-    </div>
+    </>
   )
 }
 

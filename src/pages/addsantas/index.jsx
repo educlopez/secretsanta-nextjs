@@ -8,7 +8,7 @@ export default function AddSantas() {
   const [error, setError] = useState('')
   const [message, setMessage] = useState('')
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if (santa && email) {
       try {
@@ -31,7 +31,7 @@ export default function AddSantas() {
         setElfo('')
         setError('')
         setMessage('Santa agregado con exito a la db')
-      } catch (errorMessage: any) {
+      } catch (errorMessage) {
         setError(errorMessage)
       }
     } else {
@@ -52,7 +52,7 @@ export default function AddSantas() {
           placeholder="Nombre del Santa"
           onChange={(e) => setSanta(e.target.value)}
           value={santa}
-          className="mt-1 block w-full rounded-md border border-gray-300 px-2 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          className="block w-full px-2 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
         />
       </div>
       <div>
@@ -66,7 +66,7 @@ export default function AddSantas() {
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="block w-full rounded-md border border-gray-300 px-2 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            className="block w-full px-2 py-2 border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
           />
         </div>
       </div>

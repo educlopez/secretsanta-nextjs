@@ -1,12 +1,6 @@
-// api/select-santa.ts
-
 import clientPromise from '../../lib/mongodb'
-import { NextApiRequest, NextApiResponse } from 'next'
 
-export default async function selectSanta(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default async function selectSanta(req, res) {
   try {
     const client = await clientPromise
     const db = client.db('secretsanta')
