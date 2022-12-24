@@ -8,11 +8,13 @@ export default function AddSantas() {
   const [error, setError] = useState('')
   const [message, setMessage] = useState('')
 
+  const URLSITE = process.env.NEXT_PUBLIC_SITE_URL
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (santa && email) {
       try {
-        let response = await fetch('http://localhost:3000/api/addSanta', {
+        let response = await fetch(`${URLSITE}/api/addSanta`, {
           method: 'POST',
           body: JSON.stringify({
             santa,

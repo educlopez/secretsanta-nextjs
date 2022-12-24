@@ -5,6 +5,8 @@ import { XCircleIcon, CheckCircleIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
 import elfProfile from '@/images/elf.png'
 
+const URLSITE = process.env.NEXT_PUBLIC_SITE_URL
+
 export default function Santas({ santas }) {
   const [selectedSanta, setselectedSanta] = useState('')
   const [selectedElf, setselectedElf] = useState('')
@@ -15,7 +17,7 @@ export default function Santas({ santas }) {
     e.preventDefault()
     if (selectedSanta) {
       try {
-        let response = await fetch('http://localhost:3000/api/select-santa', {
+        let response = await fetch(`${URLSITE}/api/select-santa`, {
           method: 'POST',
           body: JSON.stringify({
             selectedSanta,
