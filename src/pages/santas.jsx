@@ -8,7 +8,7 @@ export default function Santas({ santas }) {
       <h1>Listado de Santas</h1>
       <ul
         role="list"
-        className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5"
+        className="grid grid-cols-1 gap-6 p-0 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5"
       >
         {santas.map((santa) => (
           <li

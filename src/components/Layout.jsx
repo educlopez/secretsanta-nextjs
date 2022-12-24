@@ -13,7 +13,7 @@ export function Layout({ children }) {
           <Header />
         </motion.header>
         <HeroPattern />
-        <div className="relative pt-14 sm:px-6 lg:px-8">
+        <div className="relative px-8 pt-14 sm:px-6 lg:px-8">
           <main className="py-16">
             <Prose as="article">{children}</Prose>
           </main>
