@@ -1,11 +1,27 @@
 import clientPromise from '../lib/mongodb'
 
 import { Avatar } from '../components/Avatar'
+import { Button } from '@/components/Button'
+const URLSITE = process.env.NEXT_PUBLIC_SITE_URL
+const handleSubmit = async (e) => {
+  e.preventDefault()
 
+  try {
+    let response = await fetch(`${URLSITE}/api/delete`, {
+      method: 'DELETE',
+    })
+    response = await response.json()
+  } catch (errorMessage) {
+    console.error(errorMessage)
+  }
+}
 export default function Santas({ santas }) {
   return (
     <>
       <h1>Listado de Santas</h1>
+      <form onSubmit={handleSubmit} className="form">
+        <Button type="submit">Borrar DB</Button>
+      </form>
       <ul
         role="list"
         className="grid grid-cols-1 gap-6 p-0 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5"
