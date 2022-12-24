@@ -1,8 +1,10 @@
 import { createContext, Fragment, useContext } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
+import { motion } from 'framer-motion'
 import create from 'zustand'
 
 import { Header } from '@/components/Header'
+import { Navigation } from '@/components/Navigation'
 
 function MenuIcon(props) {
   return (
@@ -86,6 +88,23 @@ export function MobileNavigation() {
                 leaveTo="opacity-0"
               >
                 <Header />
+              </Transition.Child>
+
+              <Transition.Child
+                as={Fragment}
+                enter="duration-500 ease-in-out"
+                enterFrom="-translate-x-full"
+                enterTo="translate-x-0"
+                leave="duration-500 ease-in-out"
+                leaveFrom="translate-x-0"
+                leaveTo="-translate-x-full"
+              >
+                <motion.div
+                  layoutScroll
+                  className="fixed left-0 top-14 bottom-0 w-full overflow-y-auto bg-white px-4 pt-6 pb-4 shadow-lg shadow-zinc-900/10 ring-1 ring-zinc-900/7.5 dark:bg-zinc-900 dark:ring-zinc-800 min-[416px]:max-w-sm sm:px-6 sm:pb-10"
+                >
+                  <Navigation />
+                </motion.div>
               </Transition.Child>
             </Dialog.Panel>
           </Dialog>
