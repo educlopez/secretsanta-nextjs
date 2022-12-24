@@ -32,7 +32,10 @@ export default async function selectSanta(req, res) {
       .collection('santas')
       .updateOne({ santa: selectedElf.santa }, { $set: { isAssigned: true } })
 
-    res.status(200).json({ message: 'Elfo asignado exitosamente' })
+    res.status(200).json({
+      message: 'Elfo asignado exitosamente',
+      selectedElf: selectedElf.santa,
+    })
   } catch (error) {
     console.log(error)
     res.status(500).json({ error: 'Hubo un problema al asignar el elfo' })

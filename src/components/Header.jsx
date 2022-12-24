@@ -69,9 +69,7 @@ export const Header = forwardRef(function Header({ className }, ref) {
               <Logo className="h-6" />
             </Link>
             <TopLevelNavItem href="/addsantas">Crear Santa</TopLevelNavItem>
-            <TopLevelNavItem href="/asociarsanta">
-              Asociar Santa
-            </TopLevelNavItem>
+            <TopLevelNavItem href="/asignarelfo">Asignar Elfo</TopLevelNavItem>
             <TopLevelNavItem href="/santas">Listado de Santas</TopLevelNavItem>
           </ul>
         </nav>
