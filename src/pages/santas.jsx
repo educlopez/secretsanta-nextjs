@@ -2,6 +2,8 @@ import clientPromise from '../lib/mongodb'
 
 import { Avatar } from '../components/Avatar'
 import { Button } from '@/components/Button'
+import Head from 'next/head'
+
 const URLSITE = process.env.NEXT_PUBLIC_SITE_URL
 const handleSubmit = async (e) => {
   e.preventDefault()
@@ -18,6 +20,10 @@ const handleSubmit = async (e) => {
 export default function Santas({ santas }) {
   return (
     <>
+      <Head>
+        <title>Listado de Santas - Secret Santa Nextjs</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <h1>Listado de Santas</h1>
       <form onSubmit={handleSubmit} className="form">
         <Button type="submit">Borrar DB</Button>

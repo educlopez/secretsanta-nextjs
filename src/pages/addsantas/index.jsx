@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Button } from '../../components/Button'
+import Head from 'next/head'
+
 export default function AddSantas() {
   const [santa, setSanta] = useState('')
   const [email, setEmail] = useState('')
@@ -43,6 +45,10 @@ export default function AddSantas() {
 
   return (
     <>
+      <Head>
+        <title>Crear Santas - Secret Santa Nextjs</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <h1>Crear Santa</h1>
       <form onSubmit={handleSubmit} className="form">
         {error ? <div className="alert-error">{error}</div> : null}

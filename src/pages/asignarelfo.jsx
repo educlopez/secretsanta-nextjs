@@ -4,7 +4,7 @@ import { Button } from '../components/Button'
 import { XCircleIcon, CheckCircleIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
 import elfProfile from '@/images/elf.png'
-
+import Head from 'next/head'
 const URLSITE = process.env.NEXT_PUBLIC_SITE_URL
 
 export default function Santas({ santas }) {
@@ -41,6 +41,10 @@ export default function Santas({ santas }) {
   }
   return (
     <>
+      <Head>
+        <title>Asignar Elfo - Secret Santa Nextjs</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <h1>Asignar Elfo</h1>
       <form onSubmit={handleSubmit} className="form">
         {error ? (
